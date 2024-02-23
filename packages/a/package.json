@@ -4,9 +4,21 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "copyfiles -f ./src/**/*.css ./dist && babel src -d dist",
+    "version-patch": "npm version patch",
+    "version-beta": "npm version prerelease --preid beta"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/cli": "^7.23.4",
+    "@babel/core": "^7.23.7",
+    "@babel/preset-env": "^7.23.8",
+    "copyfiles": "^2.4.1"
+  },
+  "dependencies": {
+    "@babel/preset-react": "^7.23.3",
+    "clsx": "^2.0.0"
+  }
 }
